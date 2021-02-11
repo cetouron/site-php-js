@@ -1,0 +1,12 @@
+#dv_main {
+    position: relative;
+    margin: auto;
+    background-color: white;
+    border: 1px solid black;
+    border-top: 1px solid white;
+}
+
+.square {
+    position: absolute;
+    border: 1px solid white;
+}
