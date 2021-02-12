@@ -2,6 +2,7 @@
 header("Content-type: text/html;charset=utf-8");
 session_start(); // Comme setcookie, doit être appelée avant tout contenu (mais appel possible après un autre header)
 
+
 $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
 mysqli_query($cnx, "CREATE TABLE IF NOT EXISTS membre (num INT UNSIGNED AUTO_INCREMENT NOT NULL, login VARCHAR(64) NOT NULL, mdp VARCHAR(64) NOT NULL, PRIMARY KEY(num))") or die ("Erreur de création de table");
 

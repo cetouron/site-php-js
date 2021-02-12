@@ -14,7 +14,6 @@ session_start(); // Comme setcookie, doit être appelée avant tout contenu (mai
 <div class="inner">
 	
 					
-				<a name="TemplateInfo"></a>				
 				
 				<?php
 				

@@ -15,21 +15,20 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
 
 
 
-<h1> Blog </h1>
+<section id="main">
+<div class="inner">
+    
+    
+<h1><a href="blog.php"> Blog </a> </h1>
 
 <h2> Ajouter un article : </h2>
 
-<div id="content-wrap">
-		<div id="content">	 
-		<!-- que si admin -->
     
     <?php
 	if(isset($_SESSION['identifie'])) {
 
-        $connexionBD=mysqli_connect("localhost","root","root");
-        mysqli_select_db($connexionBD,"base");
         $req1="SELECT * FROM membre WHERE login='" . $_SESSION['pseudo'] ."'";
-        $res1=mysqli_query($connexionBD,$req1);
+        $res1=mysqli_query($cnx,$req1);
         $donnees=mysqli_fetch_array($res1);
 
 
@@ -75,8 +74,7 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
 
 									
 							
-							$connexionBD=mysqli_connect("localhost","root","root");
-							mysqli_select_db($connexionBD,"base");
+				
 
 							if (is_uploaded_file($_FILES["file"]['tmp_name'])) {
 
@@ -87,9 +85,9 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
 
 							else $req3 = 'INSERT INTO blog (titre, auteur, contenu, images) VALUES ("'.$_POST['titre'].'","'.$_SESSION['pseudo'].'","'.$_POST['cont'].'","images/image.jpeg");';
 							
-							mysqli_query($connexionBD,$req3);
+							mysqli_query($cnx,$req3);
 							
-							mysqli_close($connexionBD);
+							mysqli_close($cnx);
 							
 							Echo'<h2> Article posté !</h2>';
 									}
@@ -112,7 +110,8 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
                
 				} 
 			}?>
-		</div></div>
+		    </div> 					
+					</section>
 
 </body>
 

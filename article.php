@@ -24,11 +24,9 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
         
             
             
-            $connexionBD=mysqli_connect("localhost","root","root");
-            mysqli_select_db($connexionBD,"base");
 
             $req1='SELECT * FROM blog WHERE idArt="'.$_GET["article"].'";';
-            $res1=mysqli_query($connexionBD,$req1);
+            $res1=mysqli_query($cnx,$req1);
             $donnees=mysqli_fetch_array($res1);
 
             Echo'<h1 align="center"> <code >'.$donnees['titre'].'</code> </h1> <h5 align="center" > par '.$donnees['auteur'].'</h5> '; //faire page d'auteur ?
@@ -37,11 +35,10 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
                             class="displayed"
                             src="'.$donnees['images'].'">  <br>';
 
-                            Echo $donnees['contenu']; 
+                            Echo '<span>'.$donnees['contenu'].'</span>'; 
 
            
             
-            mysqli_close($connexionBD);
             
             
 
@@ -51,19 +48,19 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
             Echo'<br> <br> <br> <br> <h4>Commentaires</h4>';
 
 
-                 $connexionBD=mysqli_connect("localhost","root","root");
-                    mysqli_select_db($connexionBD,"base");
+     
                     
                     $req2='SELECT * FROM commentaire, membre WHERE commentaire.article="'.$_GET["article"].'" AND commentaire.auteur=membre.login ORDER BY commentaire.idCom;';
-                    $res2=mysqli_query($connexionBD,$req2);
+                    $res2=mysqli_query($cnx,$req2);
                     $nbcom=0;
 
 
                     $req3 = 'SELECT count(*) AS nb FROM commentaire, membre WHERE commentaire.article="'.$_GET["article"].'" AND commentaire.auteur=membre.login ORDER BY commentaire.idCom;';
-                    $res3= mysqli_query($connexionBD,$req3);
+                    $res3= mysqli_query($cnx,$req3);
                     $cols = mysqli_fetch_array($res3);
                     $nb = $cols['nb'];
-                    if ($nb==0) {
+                    
+                    if ($nb!=0) {
                     Echo'<table align="center">';
                     while ($donnees1 = mysqli_fetch_array($res2))
                     {
@@ -77,8 +74,7 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
                     else {
                            Echo"<p> Il n'y a pas encore de commentaire. </p>";
                        }
-                    mysqli_close($connexionBD);  
-                    
+
             If (isset($_SESSION['identifie'])) 
                 {
                     ?>
@@ -102,15 +98,13 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
 						{
 							
 							
-							$connexionBD=mysqli_connect("localhost","root","root");
-							mysqli_select_db($connexionBD,"base");
+					
 							
 							$req3 = 'INSERT INTO commentaire (auteur, comm, article) VALUES ("'.$_SESSION['pseudo'].'","'.$_POST['comm'].'","'.$_GET['article'].'");';
 							
-							mysqli_query($connexionBD,$req3);
+							mysqli_query($cnx,$req3);
 							
-							mysqli_close($connexionBD);
-                            echo '<meta http-equiv="refresh" content="2;url=article.php?article='.$_GET['article'].'"/>';
+                            echo '<meta http-equiv="refresh" content="2;url=article.php?article='.$_GET['article'].'"/>'; 
 
 							Echo'<h2> Commentaire posté !</h2>';
 						}
@@ -127,8 +121,9 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
                 {
                     Echo'<p>Pour poster un commentaire, merci de <a href="connexion.php"><strong>vous identifier</strong></a> ou de <a href="inscription.php"><strong>vous inscrire</strong></a></p>';
                 }
+                         mysqli_close($cnx);
             
-            /* FIN PARTIE COMMENTAIRE */
+           /* FIN PARTIE COMMENTAIRE */
         ?>				
     
     </div> 					

@@ -23,11 +23,9 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
 				<?php
 					
 					
-					$connexionBD=mysqli_connect("localhost","root","root");
-					mysqli_select_db($connexionBD,"base");
-					
+
 					$req='SELECT * FROM blog ORDER BY idArt DESC;';
-					$res=mysqli_query($connexionBD,$req);
+					$res=mysqli_query($cnx,$req);
 					
 					Echo'							<hr />					';
 					while ($donnees = mysqli_fetch_array($res))
@@ -56,10 +54,11 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
                             
 
 						}
-                    mysqli_close($connexionBD);	
+                    mysqli_close($cnx);	
                     
-                    //Faire ça avec que l'admin
+                    	if((isset($_SESSION['identifie'])) && ($donnees['role']=="admin")){
 					Echo'<h3><a href="ajoutArticle.php">Ajouter un nouvel article</a></h3>';
+                    	}
 				?>	
 				
 					</div> 					

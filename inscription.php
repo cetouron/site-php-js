@@ -23,20 +23,17 @@ $msg = '';
       $_SESSION['pseudo']=$_POST['login1'];
       $_SESSION['identifie'] = true;
 
+        echo '<meta http-equiv="refresh" content="5;url=accueil.php"/>;';
+
       // Gestion du cookie
       //
       if (isset($_POST['memo'])) {
         setcookie("membre[login]", $_POST['login1'], time() + 3600*24*365); // Durée de validité : 1 an
-        
-        // Notez le cryptage md5 du mot de passe. Ne jamais écrire d'info
-        // confidentielle en clair dans un cookie
-        //
+
         setcookie("membre[mdp]", md5($_POST['mdp1']), time() + 3600*24*365);
 
-        // Petit rafraîchissement pour charger le contenu du cookie dans les
-        // champs du formulaire d'identification
+
         //
-        echo '<meta http-equiv="refresh" content="1;url=accueil.php"/>;';
 
       }
     }
@@ -62,7 +59,7 @@ if (!(isset($_SESSION['identifie']))) {
     <p>Login : <input name="login1" type="text"></p>
     <p>Mot de passe : <input name="mdp1" type="password" width="125px"></p>
     <p>Confirmation du mot de passe : <input name="mdp2" type="password" width="125px"></p>
-    <p><input name="memo" type="checkbox" value="memo"> Retenir mes coordonnées d'identification</p>
+   <input name="memo" id="memo" type="checkbox" value="memo"><label for="memo">Retenir mes coordonnées d'identification</label>
     <input name="role1" type="hidden" value="">
     <p><input name="bouton_inscr" type="submit" value="INSCRIPTION"/></p>
   </form>
