@@ -117,3 +117,4 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
 
 
 </html>
+<?php include('footer.php');?>

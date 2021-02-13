@@ -64,3 +64,5 @@ if (isset($_POST['bouton_logout'])) unset($_SESSION['identifie']);
 
 
 </html>
+
+<?php include('footer.php');?>

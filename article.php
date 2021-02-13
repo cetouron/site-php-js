@@ -142,3 +142,4 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
     margin-left: auto;
     margin-right: auto }
     </style>
+<?php include('footer.php');?>

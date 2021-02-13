@@ -2,10 +2,7 @@
 //header("Content-type: text/html;charset=utf-8");
 session_start(); 
  ?>
-
-
-
-
+ 
 <head>
   <title>Jeu</title>
 
@@ -20,6 +17,7 @@ session_start();
 <h3 align="center" id="num"></h3>
 
   <div id="dv_main"></div>
+  <div id="son"></div>
 
   <div id="container"> <canvas id='c1' width ="450" height = "450"></canvas> </div> 
 
@@ -29,6 +27,8 @@ session_start();
 
 
 <div align="center" id="contenu"></div> 
+
+
 
 
 </div> 					
@@ -54,3 +54,4 @@ session_start();
 } 
 
   </style> 
+<?php include('footer.php');?>

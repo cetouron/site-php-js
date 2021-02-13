@@ -73,3 +73,4 @@ else Echo'Vous êtes connecté en tant que '.$_SESSION['pseudo'];
 
 </body>
 </html>
+<?php include('footer.php');?>

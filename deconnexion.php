@@ -32,3 +32,4 @@ session_start(); // Comme setcookie, doit être appelée avant tout contenu (mai
 </body>
 
 </html>
+<?php include('footer.php');?>

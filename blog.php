@@ -113,3 +113,4 @@ div#col2 {
 	}
 			
 	</style>
+	<?php include('footer.php');?>

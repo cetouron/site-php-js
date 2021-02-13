@@ -178,12 +178,16 @@ function form() {
 
   q = (Math.floor(Math.random() * quest.length));
 
-  document.getElementById("contenu").innerHTML= '<h5 id="question"></h5> <input id="reponse"  value=""/> <input type="button" onclick="valider();" value="Valider"/> <!-- type="button" onclick="valider();"'; 
-  document.getElementById("question").innerHTML= "Combien y a t'il de forme "+quest[q]+" ?";          
+  document.getElementById("contenu").innerHTML= '<h5 id="question"></h5> <input id="reponse"  value=""/> <input type="button" onclick="valider();" value="Valider"/> <!-- type="button" onclick="valider();"';
+  document.getElementById("son").innerHTML='<audio id="questi" style="display: none;"> <source src="sons/'+quest[q]+'.mp3"> </audio>';
+  document.getElementById("question").innerHTML= "Combien y a t'il de forme "+quest[q]+" ? <img src='images/son.png' height='15' onclick='oral();'/>  ";          
 
 
   
     }
+
+
+
 
 
 
@@ -245,3 +249,13 @@ function newquest() {
         c1.height=0;
     }
 }
+
+
+
+function oral() {
+
+    document.getElementById('questi').play();
+}
+
+
+

@@ -9,7 +9,7 @@
 
 <header id="header">
 				<div class="inner">
-					<a href="accueil.php" class="logo">Nom du blog</a>
+					<a href="accueil.php" class="logo">La maison des petits</a>
 					<nav id="nav">
                         
                     <a href="accueil.php">Accueil</a>

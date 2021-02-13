@@ -93,3 +93,4 @@ If (!empty($_POST["cont"]) && !empty($_POST["adresse"]) && !empty($_POST["objet"
 </section>
 </body>
 </html>
+<?php include('footer.php');?>
