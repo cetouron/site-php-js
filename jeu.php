@@ -1,5 +1,6 @@
+<!--JEU-->
 <?php
-//header("Content-type: text/html;charset=utf-8");
+header("Content-type: text/html;charset=utf-8");
 session_start(); 
  ?>
  
@@ -14,11 +15,11 @@ session_start();
 <section id="main">
 <div class="inner">
 <h2 align="center" > Test ta connaissance des formes et des couleurs</h2>
+<!--Placer les conteneurs -->
 <h3 align="center" id="num"></h3>
 
   <div id="dv_main"></div>
   <div id="son"></div>
-
   <div id="container"> <canvas id='c1' width ="450" height = "450"></canvas> </div> 
 
 
@@ -43,6 +44,8 @@ session_start();
 
 
 <style>
+
+/*Placer le canvas*/
 #container 
 { 
  padding: 10;
@@ -54,4 +57,3 @@ session_start();
 } 
 
   </style> 
-<?php include('footer.php');?>

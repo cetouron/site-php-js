@@ -1,37 +1,26 @@
+<!-- PAGE D'ACCUEIL --> 
 <?php
-header("Content-type: text/html;charset=utf-8");
+header("Content-type: text/html;charset=utf-8"); //Renseignement sur html et la langue et ses caractères
 session_start(); //
-
-$cnx = mysqli_connect('localhost', 'root', 'root', 'base');
-mysqli_query($cnx, "CREATE TABLE IF NOT EXISTS membre (num INT UNSIGNED AUTO_INCREMENT NOT NULL, login VARCHAR(64) NOT NULL, mdp VARCHAR(64) NOT NULL, PRIMARY KEY(num))") or die ("Erreur de création de table");
-
-$msg = '';
-
-// Contexte de traitement du bouton de déconnexion
-//
-if (isset($_POST['bouton_logout'])) unset($_SESSION['identifie']);
-
  ?>
 
 <html>
 
 <body>
-<?php include("menu.php"); ?>
+<?php include("menu.php"); ?> <!--Barre de menu-->
 
-
-
-
-
+<!--Bannière de l'accueil-->
 <section id="banner">
 				<div class="inner">
 					<h1 >Bienvenue <span>sur<br />
 					La maison des petits</span></h1>
 					<ul class="actions">
 					<?php 
+					// Boutons différenciés selon si l'individu est connecté ou non
 					if(isset($_SESSION['identifie'])) {
 					    echo'<li><a href="blog.php" class="button alt">Lire le blog</a></li>' ;  
 					}
-					else if (isset($_COOKIE['membre']['login']))  {
+					else if (isset($_COOKIE['membre']))  {
 					echo'<li><a href="connexion.php" class="button alt">Se connecter</a></li>'   ;
 					}
 					else echo"<li><a href='inscritpion.php' class='button alt'>S'inscrire</a></li>"  ; 
