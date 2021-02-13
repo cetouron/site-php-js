@@ -23,7 +23,7 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
             $req1='SELECT * FROM blog WHERE idArt="'.$_GET["article"].'";';
             $res1=mysqli_query($cnx,$req1);
             $donnees=mysqli_fetch_array($res1);
-            //Si
+            //Si on va chercher un article qui existe
         if (isset($_GET['article']) and $donnees) {
             //Afficher les données
             Echo'<h1 align="center"> <code >'.$donnees['titre'].'</code> </h1> <h5 align="center" > par '.$donnees['auteur'].'</h5> '; //Titre et auteur

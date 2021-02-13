@@ -17,19 +17,20 @@ session_start(); //
 					<ul class="actions">
 					<?php 
 					// Boutons différenciés selon si l'individu est connecté ou non
-					if(isset($_SESSION['identifie'])) {
+					if(isset($_SESSION['identifie'])) { //Si connecté
 					    echo'<li><a href="blog.php" class="button alt">Lire le blog</a></li>' ;  
 					}
-					else if (isset($_COOKIE['membre']))  {
+					else if (isset($_COOKIE['membre']))  { //Si pas connecté mais un compte existe en cookie
 					echo'<li><a href="connexion.php" class="button alt">Se connecter</a></li>'   ;
-					}
+					} // Sinon
 					else echo"<li><a href='inscritpion.php' class='button alt'>S'inscrire</a></li>"  ; 
 
 					?>
 					</ul>
 				</div>
 			</section>
-			
+		
+			<!--Partie présentation avec lien vers les autres pages-->
 <section id="main">
       <div class="inner"> 			
 <h1> Présentation </h1>
@@ -54,4 +55,3 @@ session_start(); //
 
 </html>
 
-<?php include('footer.php');?>
