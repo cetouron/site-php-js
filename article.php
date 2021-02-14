@@ -138,4 +138,10 @@ $cnx = mysqli_connect('localhost', 'root', 'root', 'base');
 		margin: 0 0 1em 0;
 		padding: 0.5em 0 0.5em 1em;
     }
+    /*Balise pour photo centrale*/
+    .displayed {
+    display: block;
+    max-height:300;
+    margin-left: auto;
+    margin-right: auto }
     </style>

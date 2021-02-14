@@ -36,11 +36,11 @@ session_start(); //
 <h1> Présentation </h1>
 <p>
 <h2> <a href="blog.php">Le blog</a></h2>
-<span>Sur celui-ci, vous pouvez découvrir les activités que je fais avec les enfants, leurs créations et autres outils pédagogiques que je vous partage. <br> Pour interragir, n'hésitez pas à <a href="inscription.php">vous inscrire</a>. </span></p>
+<span>A travers ce blog, vous pouvez découvrir les activités que je fais avec mes élèves de Petite Section, leurs créations et autres outils pédagogiques. <br> Pour interragir, n'hésitez pas à <a href="inscription.php">vous inscrire</a>. </span></p>
 
 <p>
 <h2> <a href="jeu.php">Jeux</a></h2>
-<span>Dans le cadre de l'apprentissage, les enfants ont besoin de developper leur capacité. Chiffres, couleurs et formes, voilà ce sur quoi ils pourront s'améliorer avec les jeux présents sur le site.<br>Pour le moment, il n'y a qu'un seul jeu, mais vous pourrez bientôt en découvrir d'autres !</span></p>
+<span>Dans le cadre de l'apprentissage, les enfants ont besoin de développer leur capacité. Chiffres, couleurs et formes, voilà ce sur quoi ils pourront s'améliorer avec les jeux présents sur le site.<br>Pour le moment, il n'y a qu'un seul jeu, mais vous pourrez bientôt en découvrir d'autres !</span></p>
 
 <p>
 <h2> <a href="blog.php">Plus d'info</a></h2>

@@ -18,8 +18,7 @@ session_start();
 <!--Présentation supplémentaire-->
 <h2> Présentation : </h2>
 
-<span>Enseignante depuis plus de 20 ans avec des classes de Petite Section, j'ai ensiengé à plus de 700 élèves. Certains parfois aujourd'hui les enfants des enfants à qui j'ai appris les bases de l'école.
-</span>
+<span>Enseignante depuis plus de 26 ans dont plus de 20 ans en Petite Section, j'ai enseigné à plus de 700 élèves dans la même école. Aujourd'hui, je commence à avoir les enfants d'élèves que j'ai eu au début de ma carrière, un bon coup de vieux!</span>
 
 <br> <br> <br>
 

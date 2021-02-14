@@ -87,7 +87,7 @@ div#col2 {
 	.imag {
 		width: 15%; 
     overflow: hidden; 
-    border: 2px solid black;
+    border: 0px solid black;
 
 	}
 
